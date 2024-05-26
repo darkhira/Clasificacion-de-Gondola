@@ -111,7 +111,7 @@ else:
     # Mostrar el resultado
 
     if np.max(score)>0.5:
-        st.subheader(f"Tipo de Flor: {class_name}")
+        st.subheader(f"Tipo de Producto: {class_name}")
         st.text(f"Puntuación de confianza: {100 * np.max(score):.2f}%")
     else:
-        st.text(f"No se pudo determinar el tipo de flor")
+        st.text(f"No se pudo determinar el tipo de producto")
