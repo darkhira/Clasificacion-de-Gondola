@@ -23,8 +23,6 @@
 #Verifique se se instaló no trante de instalar con pip install pillow
 #Esta instalacion se hace si la requiere pip install opencv-python
 
-#Descargue una foto de una flor que le sirva de ícono
-
 # importing the libraries and dependencies needed for creating the UI and supporting the deep learning models used in the project
 import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
@@ -41,7 +39,7 @@ warnings.filterwarnings("ignore")
 # set some pre-defined configurations for the page, such as the page title, logo-icon, page loading state (whether the page is loaded automatically or you need to perform some action for loading)
 st.set_page_config(
     page_title="Reconocimiento de gondola",
-    page_icon = ":smile:",
+    page_icon = "icon.png",
     initial_sidebar_state = 'auto'
 )
 
@@ -66,13 +64,13 @@ with st.spinner('Modelo está cargando..'):
 
 
 with st.sidebar:
-        st.image('rosa.jpg')
-        st.title("Reconocimiento de imagen")
-        st.subheader("Reconocimiento de imagen para gondola")
+        st.image('logo.jpg')
+        st.title("Universidad Autónoma de Bucaramanga")
+        st.subheader("Este programa esta hecho para reconocer productos de gondola")
 
-st.image('logo.jpg')
-st.title("Smart Regions Center")
-st.write("Somos un equipo apasionado de profesionales dedicados a hacer la diferencia")
+st.image('pgondola.jpeg')
+st.title("Reconocimiento de imagen")
+st.write("Reconocimiento de imagen para productos de gondola/supermercado")
 st.write("""
          # Detección de gondola
          """
@@ -98,7 +96,7 @@ def import_and_predict(image_data, model, class_names):
 
 class_names = open("./clases.txt", "r").readlines()
 
-img_file_buffer = st.camera_input("Capture una foto para identificar una flor")
+img_file_buffer = st.camera_input("Capture una foto para identificar un producto")
 if img_file_buffer is None:
     st.text("Por favor tome una foto")
 else:
